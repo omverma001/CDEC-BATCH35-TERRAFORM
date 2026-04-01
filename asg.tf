@@ -42,7 +42,7 @@ resource "aws_autoscaling_group" "asg_cloth" {
   desired_capacity          = var.desired_size
   availability_zones        = var.availability_zones
   launch_template {
-    id      = aws_launch_template.lt_cloth
+    id      = aws_launch_template.lt_cloth.id
   }
 
   target_group_arns = [
@@ -79,7 +79,7 @@ resource "aws_autoscaling_group" "asg_laptop" {
   desired_capacity          = var.desired_size
   availability_zones        = var.availability_zones
   launch_template {
-    id      = aws_launch_template.lt_laptop
+    id      = aws_launch_template.lt_laptop.id
   }
 
   target_group_arns = [
